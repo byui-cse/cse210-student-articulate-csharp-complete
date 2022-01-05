@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "unit02-dice",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-unit02-dice",
+            "program": "${workspaceFolder}/unit02-dice/bin/Debug/net5.0/unit02-dice.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/unit02-dice",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "unit03-seeker",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-unit03-seeker",
+            "program": "${workspaceFolder}/unit03-seeker/bin/Debug/net5.0/unit03-seeker.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/unit03-seeker",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "unit04-rfk",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-unit04-rfk",
+            "program": "${workspaceFolder}/unit04-rfk/bin/Debug/net5.0/unit04-rfk.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/unit04-rfk",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "unit05-snake",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-unit05-snake",
+            "program": "${workspaceFolder}/unit05-snake/bin/Debug/net5.0/unit05-snake.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/unit05-snake",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "unit06-batter",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-unit06-batter",
+            "program": "${workspaceFolder}/unit06-batter/bin/Debug/net5.0/unit06-batter.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/unit06-batter",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        }
+    ]
+}
