@@ -1,6 +1,7 @@
-﻿using System;
-using System.IO;
-namespace Dice
+﻿using Unit03.Game;
+
+
+namespace Unit03
 {
     /// <summary>
     /// The program's entry point.

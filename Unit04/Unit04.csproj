@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>unit04_rfk</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Unit04</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

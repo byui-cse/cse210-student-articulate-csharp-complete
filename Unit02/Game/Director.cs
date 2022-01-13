@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Dice
+namespace Unit02.Game
 {
     /// <summary>
     /// A person who directs the game. 

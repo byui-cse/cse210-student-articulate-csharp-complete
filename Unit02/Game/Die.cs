@@ -1,7 +1,7 @@
 using System;
 
 
-namespace Dice
+namespace Unit02.Game
 {
     /// <summary>
     /// A small cube with a different number of spots on each of its six sides.
