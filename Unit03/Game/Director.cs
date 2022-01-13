@@ -36,7 +36,7 @@ namespace Unit03.Game
         /// <summary>
         /// Moves the seeker to a new location.
         /// </summary>
-        public void GetInputs()
+        private void GetInputs()
         {
             terminalService.WriteText(hider.location.ToString());
             int location = terminalService.ReadNumber("\nEnter a location [1-1000]: ");
@@ -46,7 +46,7 @@ namespace Unit03.Game
         /// <summary>
         /// Keeps watch on where the seeker is moving.
         /// </summary>
-        public void DoUpdates()
+        private void DoUpdates()
         {
             hider.WatchSeeker(seeker);
         }
@@ -54,7 +54,7 @@ namespace Unit03.Game
         /// <summary>
         /// Provides a hint for the seeker to use.
         /// </summary>
-        public void DoOutputs()
+        private void DoOutputs()
         {
             string hint = hider.GetHint();
             terminalService.WriteText(hint);

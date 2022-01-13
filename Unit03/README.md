@@ -30,7 +30,7 @@ root                    (project root folder)
 ```
 
 ## Required Technologies
-* Dotnet 5.0
+* dotnet 6.0
 
 ## Authors
 * Matt Manley (manleym@byui.edu)
