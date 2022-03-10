@@ -1,12 +1,15 @@
 ﻿using System;
+using Unit06.Game.Directing;
+using Unit06.Game.Services;
 
-namespace unit06_batter
+namespace Unit06
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Director director = new Director(SceneManager.VideoService);
+            director.StartGame();
         }
     }
 }
