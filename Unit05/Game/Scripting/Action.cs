@@ -13,7 +13,7 @@ namespace Unit05.Game.Scripting
     public interface Action
     {
         /// <summary>
-        /// Executes something that is important in the game. This method should be overriden by 
+        /// Executes something that is important in the game. This method should be overridden by 
         /// derived classes.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>

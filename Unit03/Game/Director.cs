@@ -8,10 +8,10 @@ namespace Unit03.Game
     /// </summary>
     public class Director
     {
-        private Hider hider = new Hider();
-        private bool isPlaying = true;
-        private Seeker seeker = new Seeker();
-        private TerminalService terminalService = new TerminalService();
+        private Hider _hider = new Hider();
+        private bool _isPlaying = true;
+        private Seeker _seeker = new Seeker();
+        private TerminalService _terminalService = new TerminalService();
 
         /// <summary>
         /// Constructs a new instance of Director.
@@ -25,7 +25,7 @@ namespace Unit03.Game
         /// </summary>
         public void StartGame()
         {
-            while (isPlaying)
+            while (_isPlaying)
             {
                 GetInputs();
                 DoUpdates();
@@ -38,9 +38,9 @@ namespace Unit03.Game
         /// </summary>
         private void GetInputs()
         {
-            terminalService.WriteText(hider.location.ToString());
-            int location = terminalService.ReadNumber("\nEnter a location [1-1000]: ");
-            seeker.MoveLocation(location);
+            _terminalService.WriteText(_hider._location.ToString());
+            int location = _terminalService.ReadNumber("\nEnter a location [1-1000]: ");
+            _seeker.MoveLocation(location);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Unit03.Game
         /// </summary>
         private void DoUpdates()
         {
-            hider.WatchSeeker(seeker);
+            _hider.WatchSeeker(_seeker);
         }
 
         /// <summary>
@@ -56,11 +56,11 @@ namespace Unit03.Game
         /// </summary>
         private void DoOutputs()
         {
-            string hint = hider.GetHint();
-            terminalService.WriteText(hint);
-            if (hider.IsFound())
+            string hint = _hider.GetHint();
+            _terminalService.WriteText(hint);
+            if (_hider.IsFound())
             {
-                isPlaying = false;
+                _isPlaying = false;
             }
             
         }

@@ -16,7 +16,7 @@ namespace Unit05.Game.Scripting
     /// </summary>
     public class HandleCollisionsAction : Action
     {
-        private bool isGameOver = false;
+        private bool _isGameOver = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -28,7 +28,7 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            if (isGameOver == false)
+            if (_isGameOver == false)
             {
                 HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
@@ -69,14 +69,14 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    isGameOver = true;
+                    _isGameOver = true;
                 }
             }
         }
 
         private void HandleGameOver(Cast cast)
         {
-            if (isGameOver == true)
+            if (_isGameOver == true)
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
                 List<Actor> segments = snake.GetSegments();

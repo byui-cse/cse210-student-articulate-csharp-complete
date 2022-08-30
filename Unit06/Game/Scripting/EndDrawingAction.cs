@@ -7,16 +7,16 @@ namespace Unit06.Game.Scripting
 {
     public class EndDrawingAction : Action
     {
-        private VideoService videoService;
+        private VideoService _videoService;
         
         public EndDrawingAction(VideoService videoService)
         {
-            this.videoService = videoService;
+            this._videoService = videoService;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            videoService.FlushBuffer();
+            _videoService.FlushBuffer();
         }
     }
 }

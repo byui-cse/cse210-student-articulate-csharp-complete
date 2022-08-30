@@ -12,8 +12,8 @@ namespace Unit03.Game
     /// </summary>
     public class Hider
     {
-        public int location = 0;
-        private List<int> distance = new List<int>();
+        public int _location = 0;
+        private List<int> _distance = new List<int>();
 
         /// <summary>
         /// Constructs a new instance of Hider. 
@@ -21,10 +21,10 @@ namespace Unit03.Game
         public Hider()
         {
             Random random = new Random();
-            location = random.Next(1001);
+            _location = random.Next(1001);
             // start with two so GetHint always works
-            distance.Add(0);
-            distance.Add(0);
+            _distance.Add(0);
+            _distance.Add(0);
         }
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace Unit03.Game
         /// <returns>A new hint.</returns>
         public string GetHint()
         {
-            int current = distance[distance.Count - 1];
-            int previous = distance[distance.Count - 2];
+            int current = _distance[_distance.Count - 1];
+            int previous = _distance[_distance.Count - 2];
 
             string hint = "(-.-) Nap time.";
             if (current == 0)
@@ -59,7 +59,7 @@ namespace Unit03.Game
         /// <returns>True if found; false if otherwise.</returns>
         public bool IsFound()
         {
-            return distance[distance.Count - 1] == 0;
+            return _distance[_distance.Count - 1] == 0;
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace Unit03.Game
         /// <param name="seeker">The seeker to watch.</param>
         public void WatchSeeker(Seeker seeker)
         {
-            int newDistance = Math.Abs(location - seeker.GetLocation());
-            distance.Add(newDistance);
+            int newDistance = Math.Abs(_location - seeker.GetLocation());
+            _distance.Add(newDistance);
         }
     }
 }

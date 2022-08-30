@@ -5,20 +5,20 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Color
     {
-        private int red;
-        private int green;
-        private int blue;
-        private int alpha;
+        private int _red;
+        private int _green;
+        private int _blue;
+        private int _alpha;
 
         /// <summary>
         /// Constructs a new instance of Color.
         /// </summary>
         public Color(int red, int green, int blue, int alpha = 255)
         {
-            this.red = red;
-            this.green = green;
-            this.blue = blue;
-            this.alpha = alpha;
+            this._red = red;
+            this._green = green;
+            this._blue = blue;
+            this._alpha = alpha;
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Unit06.Game.Casting
         /// <returns>The alpha value.</returns>
         public int GetAlpha()
         {
-            return alpha;
+            return _alpha;
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Unit06.Game.Casting
         /// <returns>The blue value.</returns>
         public int GetBlue()
         {
-            return blue;
+            return _blue;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Unit06.Game.Casting
         /// <returns>The green value.</returns>
         public int GetGreen()
         {
-            return green;
+            return _green;
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Unit06.Game.Casting
         /// <returns>The red value.</returns>
         public int GetRed()
         {
-            return red;
+            return _red;
         }
 
         

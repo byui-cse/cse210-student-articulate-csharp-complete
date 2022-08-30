@@ -13,7 +13,7 @@ namespace Unit05.Game.Services
     /// </summary>
     public class KeyboardService
     {
-        private Dictionary<string, KeyboardKey> keys
+        private Dictionary<string, KeyboardKey> _keys
                 = new Dictionary<string, KeyboardKey>();
 
         /// <summary>
@@ -21,14 +21,14 @@ namespace Unit05.Game.Services
         /// </summary>
         public KeyboardService()
         {
-            keys["w"] = KeyboardKey.KEY_W;
-            keys["a"] = KeyboardKey.KEY_A;
-            keys["s"] = KeyboardKey.KEY_S;
-            keys["d"] = KeyboardKey.KEY_D;
-            keys["i"] = KeyboardKey.KEY_I;
-            keys["j"] = KeyboardKey.KEY_J;
-            keys["k"] = KeyboardKey.KEY_K;
-            keys["l"] = KeyboardKey.KEY_L;
+            _keys["w"] = KeyboardKey.KEY_W;
+            _keys["a"] = KeyboardKey.KEY_A;
+            _keys["s"] = KeyboardKey.KEY_S;
+            _keys["d"] = KeyboardKey.KEY_D;
+            _keys["i"] = KeyboardKey.KEY_I;
+            _keys["j"] = KeyboardKey.KEY_J;
+            _keys["k"] = KeyboardKey.KEY_K;
+            _keys["l"] = KeyboardKey.KEY_L;
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Unit05.Game.Services
         /// <returns>True if the given key is down; false if otherwise.</returns>
         public bool IsKeyDown(string key)
         {
-            KeyboardKey raylibKey = keys[key.ToLower()];
+            KeyboardKey raylibKey = _keys[key.ToLower()];
             return Raylib.IsKeyDown(raylibKey);
         }
 
@@ -49,7 +49,7 @@ namespace Unit05.Game.Services
         /// <returns>True if the given key is up; false if otherwise.</returns>
         public bool IsKeyUp(string key)
         {
-            KeyboardKey raylibKey = keys[key.ToLower()];
+            KeyboardKey raylibKey = _keys[key.ToLower()];
             return Raylib.IsKeyUp(raylibKey);
         }
 

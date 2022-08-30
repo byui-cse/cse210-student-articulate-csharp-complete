@@ -5,18 +5,18 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Body
     {
-        private Point position;
-        private Point size;
-        private Point velocity;
+        private Point _position;
+        private Point _size;
+        private Point _velocity;
 
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
         public Body(Point position, Point size, Point velocity)
         {
-            this.position = position;
-            this.size = size;
-            this.velocity = velocity;
+            this._position = position;
+            this._size = size;
+            this._velocity = velocity;
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Unit06.Game.Casting
         /// <returns>The position.</returns>
         public Point GetPosition()
         {
-            return position;
+            return _position;
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Unit06.Game.Casting
         /// <returns>The enclosing rectangle.</returns>
         public Rectangle GetRectangle()
         {
-            return new Rectangle(position, size);
+            return new Rectangle(_position, _size);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Unit06.Game.Casting
         /// <returns>The size.</returns>
         public Point GetSize()
         {
-            return size;
+            return _size;
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Unit06.Game.Casting
         /// <returns>The velocity.</returns>
         public Point GetVelocity()
         {
-            return velocity;
+            return _velocity;
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Unit06.Game.Casting
         /// <param name="position">The given position.</param>
         public void SetPosition(Point position)
         {
-            this.position = position;
+            this._position = position;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Unit06.Game.Casting
         /// <param name="size">The given size.</param>
         public void SetSize(Point size)
         {
-            this.size = size;
+            this._size = size;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Unit06.Game.Casting
         /// <param name="velocity">The given velocity.</param>
         public void SetVelocity(Point velocity)
         {
-            this.velocity = velocity;
+            this._velocity = velocity;
         }
     }
 }

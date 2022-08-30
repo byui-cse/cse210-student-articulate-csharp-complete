@@ -11,8 +11,8 @@ namespace Unit02.Game
     /// </summary> 
     public class Die
     {
-        public int value = 0;
-        public int points = 0;
+        public int _value = 0;
+        public int _points = 0;
 
         /// <summary>
         /// Constructs a new instance of Die.
@@ -27,19 +27,19 @@ namespace Unit02.Game
         public void Roll()
         {
             Random random = new Random();
-            value = random.Next(1, 7);
+            _value = random.Next(1, 7);
             
-            if (value == 5)
+            if (_value == 5)
             {
-                points = 50;
+                _points = 50;
             }
-            else if (value == 1)
+            else if (_value == 1)
             {
-                points = 100;
+                _points = 100;
             }
             else
             {
-                points = 0;
+                _points = 0;
             }
         }
 

@@ -5,16 +5,16 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Racket : Actor
     {
-        private Body body;
-        private Animation animation;
+        private Body _body;
+        private Animation _animation;
         
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
         public Racket(Body body, Animation animation, bool debug) : base(debug)
         {
-            this.body = body;
-            this.animation = animation;
+            this._body = body;
+            this._animation = animation;
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Unit06.Game.Casting
         /// <returns>The animation.</returns>
         public Animation GetAnimation()
         {
-            return animation;
+            return _animation;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Unit06.Game.Casting
         /// <returns>The body.</returns>
         public Body GetBody()
         {
-            return body;
+            return _body;
         }
 
         /// <summary>
@@ -40,10 +40,10 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void MoveNext()
         {
-            Point position = body.GetPosition();
-            Point velocity = body.GetVelocity();
+            Point position = _body.GetPosition();
+            Point velocity = _body.GetVelocity();
             Point newPosition = position.Add(velocity);
-            body.SetPosition(newPosition);
+            _body.SetPosition(newPosition);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Unit06.Game.Casting
         public void SwingLeft()
         {
             Point velocity = new Point(-Constants.RACKET_VELOCITY, 0);
-            body.SetVelocity(velocity);
+            _body.SetVelocity(velocity);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Unit06.Game.Casting
         public void SwingRight()
         {
             Point velocity = new Point(Constants.RACKET_VELOCITY, 0);
-            body.SetVelocity(velocity);
+            _body.SetVelocity(velocity);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Unit06.Game.Casting
         public void StopMoving()
         {
             Point velocity = new Point(0, 0);
-            body.SetVelocity(velocity);
+            _body.SetVelocity(velocity);
         }
         
     }

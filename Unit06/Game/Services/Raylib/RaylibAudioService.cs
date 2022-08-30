@@ -7,7 +7,7 @@ namespace Unit06.Game.Services
 {
     public class RaylibAudioService : AudioService
     {
-        private Dictionary<string, Raylib_cs.Sound> sounds 
+        private Dictionary<string, Raylib_cs.Sound> _sounds 
             = new Dictionary<string, Raylib_cs.Sound>();
         
         /// <summary>
@@ -31,7 +31,7 @@ namespace Unit06.Game.Services
             foreach (string filepath in filepaths)
             {
                 Raylib_cs.Sound sound = Raylib.LoadSound(filepath);
-                sounds[filepath] = sound;
+                _sounds[filepath] = sound;
             }
         }
  
@@ -39,9 +39,9 @@ namespace Unit06.Game.Services
         public void PlaySound(Casting.Sound sound)
         {
             string filename = sound.GetFilename();
-            if (sounds.ContainsKey(filename))
+            if (_sounds.ContainsKey(filename))
             {
-                Raylib_cs.Sound raylibSound = sounds[filename];
+                Raylib_cs.Sound raylibSound = _sounds[filename];
                 Raylib.PlaySound(raylibSound);
             }
         }
@@ -55,9 +55,9 @@ namespace Unit06.Game.Services
         /// </inheritdoc>
         public void UnloadSounds()
         {
-            foreach (string filepath in sounds.Keys)
+            foreach (string filepath in _sounds.Keys)
             {
-                Raylib_cs.Sound raylibSound = sounds[filepath];
+                Raylib_cs.Sound raylibSound = _sounds[filepath];
                 Raylib.UnloadSound(raylibSound);
             }
         }

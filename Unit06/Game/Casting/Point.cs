@@ -9,8 +9,8 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Point
     {
-        private int x;
-        private int y;
+        private int _x;
+        private int _y;
 
         /// <summary>
         /// Constructs a new instance of Point using the given x and y values.
@@ -19,8 +19,8 @@ namespace Unit06.Game.Casting
         /// <param name="y">The given y value.</param>
         public Point(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            this._x = x;
+            this._y = y;
         }
 
         /// <summary>
@@ -30,8 +30,8 @@ namespace Unit06.Game.Casting
         /// <returns>The sum as a new Point.</returns>
         public Point Add(Point other)
         {
-            int x = this.x + other.GetX();
-            int y = this.y + other.GetY();
+            int x = this._x + other.GetX();
+            int y = this._y + other.GetY();
             return new Point(x, y);
         }
 
@@ -42,7 +42,7 @@ namespace Unit06.Game.Casting
         /// <returns>True if both x and y are equal; false if otherwise.</returns>
         public bool Equals(Point other)
         {
-            return this.x == other.GetX() && this.y == other.GetY();
+            return this._x == other.GetX() && this._y == other.GetY();
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Unit06.Game.Casting
         /// <returns>The x coordinate.</returns>
         public int GetX()
         {
-            return x;
+            return _x;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Unit06.Game.Casting
         /// <returns>The y coordinate.</returns>
         public int GetY()
         {
-            return y;
+            return _y;
         }
 
         /// <summary>
@@ -69,8 +69,8 @@ namespace Unit06.Game.Casting
         /// <returns>A new point that is reversed.</returns>
         public Point Reverse()
         {
-            int x = this.x * -1;
-            int y = this.y * -1;
+            int x = this._x * -1;
+            int y = this._y * -1;
             return new Point(x, y);
         }
         
@@ -81,8 +81,8 @@ namespace Unit06.Game.Casting
         /// <returns>A scaled instance of Point.</returns>
         public Point Scale(int factor)
         {
-            int x = this.x * factor;
-            int y = this.y * factor;
+            int x = this._x * factor;
+            int y = this._y * factor;
             return new Point(x, y);
         }
     }

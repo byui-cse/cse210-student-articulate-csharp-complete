@@ -12,7 +12,7 @@ namespace Unit05.Game.Scripting
     /// </summary>
     public class Script
     {
-        private Dictionary<string, List<Action>> actions = new Dictionary<string, List<Action>>();
+        private Dictionary<string, List<Action>> _actions = new Dictionary<string, List<Action>>();
 
         /// <summary>
         /// Constructs a new instance of Script.
@@ -28,14 +28,14 @@ namespace Unit05.Game.Scripting
         /// <param name="action">The action to add.</param>
         public void AddAction(string group, Action action)
         {
-            if (!actions.ContainsKey(group))
+            if (!_actions.ContainsKey(group))
             {
-                actions[group] = new List<Action>();
+                _actions[group] = new List<Action>();
             }
 
-            if (!actions[group].Contains(action))
+            if (!_actions[group].Contains(action))
             {
-                actions[group].Add(action);
+                _actions[group].Add(action);
             }
         }
 
@@ -47,9 +47,9 @@ namespace Unit05.Game.Scripting
         public List<Action> GetActions(string group)
         {
             List<Action> results = new List<Action>();
-            if (actions.ContainsKey(group))
+            if (_actions.ContainsKey(group))
             {
-                results.AddRange(actions[group]);
+                results.AddRange(_actions[group]);
             }
             return results;
         }
@@ -61,9 +61,9 @@ namespace Unit05.Game.Scripting
         /// <param name="action">The action to remove.</param>
         public void RemoveActor(string group, Action action)
         {
-            if (actions.ContainsKey(group))
+            if (_actions.ContainsKey(group))
             {
-                actions[group].Remove(action);
+                _actions[group].Remove(action);
             }
         }
 

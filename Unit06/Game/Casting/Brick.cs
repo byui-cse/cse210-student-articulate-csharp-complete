@@ -5,18 +5,18 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Brick : Actor
     {
-        private Body body;
-        private Animation animation;
-        private int points;
+        private Body _body;
+        private Animation _animation;
+        private int _points;
 
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
         public Brick(Body body, Animation animation, int points, bool debug) : base(debug)
         {
-            this.body = body;
-            this.animation = animation;
-            this.points = points;
+            this._body = body;
+            this._animation = animation;
+            this._points = points;
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Unit06.Game.Casting
         /// <returns>The animation.</returns>
         public Animation GetAnimation()
         {
-            return animation;
+            return _animation;
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Unit06.Game.Casting
         /// <returns>The body.</returns>
         public Body GetBody()
         {
-            return body;
+            return _body;
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Unit06.Game.Casting
         /// <returns>The points.</returns>
         public int GetPoints()
         {
-            return points;
+            return _points;
         }
         
     }

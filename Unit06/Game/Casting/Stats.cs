@@ -5,9 +5,9 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Stats : Actor
     {
-        private int level;
-        private int lives;
-        private int score;
+        private int _level;
+        private int _lives;
+        private int _score;
 
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -15,9 +15,9 @@ namespace Unit06.Game.Casting
         public Stats(int level = 1, int lives = 3, int score = 0, 
                 bool debug = false) : base(debug)
         {
-            this.level = level;
-            this.lives = lives;
-            this.score = score;
+            this._level = level;
+            this._lives = lives;
+            this._score = score;
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void AddLevel()
         {
-            level++;
+            _level++;
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void AddLife()
         {
-            lives++;
+            _lives++;
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Unit06.Game.Casting
         /// <param name="points">The given points.</param>
         public void AddPoints(int points)
         {
-            score += points;
+            _score += points;
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Unit06.Game.Casting
         /// <returns>The level.</returns>
         public int GetLevel()
         {
-            return level;
+            return _level;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Unit06.Game.Casting
         /// <returns>The lives.</returns>
         public int GetLives()
         {
-            return lives;
+            return _lives;
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Unit06.Game.Casting
         /// <returns>The score.</returns>
         public int GetScore()
         {
-            return score;
+            return _score;
         }
 
         /// <summary>
@@ -77,10 +77,10 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void RemoveLife()
         {
-            lives--;
-            if (lives <= 0)
+            _lives--;
+            if (_lives <= 0)
             {
-                lives = 0;
+                _lives = 0;
             }
         }
         

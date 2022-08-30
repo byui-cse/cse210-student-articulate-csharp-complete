@@ -11,10 +11,10 @@ namespace Unit04.Game.Casting
     /// </summary>
     public class Color
     {
-        private int red = 0;
-        private int green = 0;
-        private int blue = 0;
-        private int alpha = 255;
+        private int _red = 0;
+        private int _green = 0;
+        private int _blue = 0;
+        private int _alpha = 255;
 
         /// <summary>
         /// Constructs a new instance of Color using the given red, green and blue values.
@@ -24,9 +24,9 @@ namespace Unit04.Game.Casting
         /// <param name="blue">The given blue value (0-255).</param>
         public Color(int red, int green, int blue)
         {
-            this.red = red;
-            this.green = green;
-            this.blue = blue;
+            this._red = red;
+            this._green = green;
+            this._blue = blue;
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Unit04.Game.Casting
         /// <returns>The alpha value.</returns>
         public int GetAlpha()
         {
-            return alpha;
+            return _alpha;
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Unit04.Game.Casting
         /// <returns>The blue value.</returns>
         public int GetBlue()
         {
-            return blue;
+            return _blue;
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Unit04.Game.Casting
         /// <returns>The green value.</returns>
         public int GetGreen()
         {
-            return green;
+            return _green;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Unit04.Game.Casting
         /// <returns>The red value.</returns>
         public int GetRed()
         {
-            return red;
+            return _red;
         }
 
     }

@@ -11,10 +11,10 @@ namespace Unit02.Game
     /// </summary>
     public class Director
     {
-        List<Die> dice = new List<Die>();
-        bool isPlaying = true;
-        int score = 0;
-        int totalScore = 0;
+        List<Die> _dice = new List<Die>();
+        bool _isPlaying = true;
+        int _score = 0;
+        int _totalScore = 0;
 
         /// <summary>
         /// Constructs a new instance of Director.
@@ -24,7 +24,7 @@ namespace Unit02.Game
             for (int i = 0; i < 5; i++)
             {
                 Die die = new Die();
-                dice.Add(die);
+                _dice.Add(die);
             }
         }
 
@@ -33,7 +33,7 @@ namespace Unit02.Game
         /// </summary>
         public void StartGame()
         {
-            while (isPlaying)
+            while (_isPlaying)
             {
                 GetInputs();
                 DoUpdates();
@@ -48,7 +48,7 @@ namespace Unit02.Game
         {
             Console.Write("Roll dice? [y/n] ");
             string rollDice = Console.ReadLine();
-            isPlaying = (rollDice == "y");
+            _isPlaying = (rollDice == "y");
         }
 
         /// <summary>
@@ -56,18 +56,18 @@ namespace Unit02.Game
         /// </summary>
         public void DoUpdates()
         {
-            if (!isPlaying)
+            if (!_isPlaying)
             {
                 return;
             }
 
-            score = 0;
-            foreach (Die die in dice)
+            _score = 0;
+            foreach (Die die in _dice)
             {
                 die.Roll();
-                score += die.points;
+                _score += die._points;
             }
-            totalScore += score;
+            _totalScore += _score;
         }
 
         /// <summary>
@@ -75,20 +75,20 @@ namespace Unit02.Game
         /// </summary>
         public void DoOutputs()
         {
-            if (!isPlaying)
+            if (!_isPlaying)
             {
                 return;
             }
 
             string values = "";
-            foreach (Die die in dice)
+            foreach (Die die in _dice)
             {
-                values += $"{die.value} ";
+                values += $"{die._value} ";
             }
 
             Console.WriteLine($"You rolled: {values}");
-            Console.WriteLine($"Your score is: {totalScore}\n");
-            isPlaying = (score > 0);
+            Console.WriteLine($"Your score is: {_totalScore}\n");
+            _isPlaying = (_score > 0);
         }
     }
 }

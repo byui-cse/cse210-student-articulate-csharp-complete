@@ -6,11 +6,11 @@ namespace Unit06.Game.Scripting
 {
     public class DrawHudAction : Action
     {
-        private VideoService videoService;
+        private VideoService _videoService;
         
         public DrawHudAction(VideoService videoService)
         {
-            this.videoService = videoService;
+            this._videoService = videoService;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
@@ -27,7 +27,7 @@ namespace Unit06.Game.Scripting
             Text text = label.GetText();
             text.SetValue(string.Format(format, data));
             Point position = label.GetPosition();
-            videoService.DrawText(text, position);
+            _videoService.DrawText(text, position);
         }
     }
 }

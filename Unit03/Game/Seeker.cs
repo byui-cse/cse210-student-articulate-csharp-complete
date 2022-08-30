@@ -11,7 +11,7 @@ namespace Unit03.Game
     /// </summary>
     public class Seeker
     {
-        private int location = 0;
+        private int _location = 0;
 
         /// <summary>
         /// Constructs a new instance of Seeker.
@@ -19,7 +19,7 @@ namespace Unit03.Game
         public Seeker()
         {
             Random random = new Random();
-            location = random.Next(1001);
+            _location = random.Next(1001);
         }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Unit03.Game
         /// <returns>The current location.</returns>
         public int GetLocation()
         {
-            return location;
+            return _location;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Unit03.Game
         /// <param name="location">The given location.</param>
         public void MoveLocation(int location)
         {
-            this.location = location;
+            this._location = location;
         }
 
     }

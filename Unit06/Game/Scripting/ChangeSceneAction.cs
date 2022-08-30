@@ -6,20 +6,20 @@ namespace Unit06.Game.Scripting
 {
     public class ChangeSceneAction : Action
     {
-        private KeyboardService keyboardService;
-        private string nextScene;
+        private KeyboardService _keyboardService;
+        private string _nextScene;
 
         public ChangeSceneAction(KeyboardService keyboardService, string nextScene)
         {
-            this.keyboardService = keyboardService;
-            this.nextScene = nextScene;
+            this._keyboardService = keyboardService;
+            this._nextScene = nextScene;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
         {
-            if (keyboardService.IsKeyPressed(Constants.ENTER))
+            if (_keyboardService.IsKeyPressed(Constants.ENTER))
             {
-                callback.OnNext(nextScene);
+                callback.OnNext(_nextScene);
             }
         }
     }

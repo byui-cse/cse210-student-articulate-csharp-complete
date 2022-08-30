@@ -12,11 +12,11 @@ namespace Unit04.Game.Casting
     /// </summary>
     public class Actor
     {
-        private string text = "";
-        private int fontSize = 15;
-        private Color color = new Color(255, 255, 255); // white
-        private Point position = new Point(0, 0);
-        private Point velocity = new Point(0, 0);
+        private string _text = "";
+        private int _fontSize = 15;
+        private Color _color = new Color(255, 255, 255); // white
+        private Point _position = new Point(0, 0);
+        private Point _velocity = new Point(0, 0);
 
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -31,7 +31,7 @@ namespace Unit04.Game.Casting
         /// <returns>The color.</returns>
         public Color GetColor()
         {
-            return color;
+            return _color;
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Unit04.Game.Casting
         /// <returns>The font size.</returns>
         public int GetFontSize()
         {
-            return fontSize;
+            return _fontSize;
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Unit04.Game.Casting
         /// <returns>The position.</returns>
         public Point GetPosition()
         {
-            return position;
+            return _position;
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Unit04.Game.Casting
         /// <returns>The text.</returns>
         public string GetText()
         {
-            return text;
+            return _text;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Unit04.Game.Casting
         /// <returns>The velocity.</returns>
         public Point GetVelocity()
         {
-            return velocity;
+            return _velocity;
         }
 
         /// <summary>
@@ -79,9 +79,9 @@ namespace Unit04.Game.Casting
         /// <param name="maxY">The maximum y value.</param>
         public void MoveNext(int maxX, int maxY)
         {
-            int x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
-            int y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
-            position = new Point(x, y);
+            int x = ((_position.GetX() + _velocity.GetX()) + maxX) % maxX;
+            int y = ((_position.GetY() + _velocity.GetY()) + maxY) % maxY;
+            _position = new Point(x, y);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Unit04.Game.Casting
             {
                 throw new ArgumentException("color can't be null");
             }
-            this.color = color;
+            this._color = color;
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Unit04.Game.Casting
             {
                 throw new ArgumentException("fontSize must be greater than zero");
             }
-            this.fontSize = fontSize;
+            this._fontSize = fontSize;
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Unit04.Game.Casting
             {
                 throw new ArgumentException("position can't be null");
             }
-            this.position = position;
+            this._position = position;
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Unit04.Game.Casting
             {
                 throw new ArgumentException("text can't be null");
             }
-            this.text = text;
+            this._text = text;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Unit04.Game.Casting
             {
                 throw new ArgumentException("velocity can't be null");
             }
-            this.velocity = velocity;
+            this._velocity = velocity;
         }
 
     }

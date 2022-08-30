@@ -13,7 +13,7 @@ namespace Unit04.Game.Services
     /// </summary>
     public class KeyboardService
     {
-        private int cellSize = 15;
+        private int _cellSize = 15;
 
         /// <summary>
         /// Constructs a new instance of KeyboardService using the given cell size.
@@ -21,7 +21,7 @@ namespace Unit04.Game.Services
         /// <param name="cellSize">The cell size (in pixels).</param>
         public KeyboardService(int cellSize)
         {
-            this.cellSize = cellSize;
+            this._cellSize = cellSize;
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Unit04.Game.Services
             }
 
             Point direction = new Point(dx, dy);
-            direction = direction.Scale(cellSize);
+            direction = direction.Scale(_cellSize);
 
             return direction;
         }

@@ -7,11 +7,11 @@ namespace Unit06.Game.Scripting
 {
     public class DrawBricksAction : Action
     {
-        private VideoService videoService;
+        private VideoService _videoService;
         
         public DrawBricksAction(VideoService videoService)
         {
-            this.videoService = videoService;
+            this._videoService = videoService;
         }
 
         public void Execute(Cast cast, Script script, ActionCallback callback)
@@ -27,13 +27,13 @@ namespace Unit06.Game.Scripting
                     Rectangle rectangle = body.GetRectangle();
                     Point size = rectangle.GetSize();
                     Point pos = rectangle.GetPosition();
-                    videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
+                    _videoService.DrawRectangle(size, pos, Constants.PURPLE, false);
                 }
 
                 Animation animation = brick.GetAnimation();
                 Image image = animation.NextImage();
                 Point position = body.GetPosition();
-                videoService.DrawImage(image, position);
+                _videoService.DrawImage(image, position);
             }
         }
     }

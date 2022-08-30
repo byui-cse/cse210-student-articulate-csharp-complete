@@ -11,14 +11,14 @@ namespace Unit05.Game.Scripting
     /// </summary>
     public class DrawActorsAction : Action
     {
-        private VideoService videoService;
+        private VideoService _videoService;
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
         /// </summary>
         public DrawActorsAction(VideoService videoService)
         {
-            this.videoService = videoService;
+            this._videoService = videoService;
         }
 
         /// <inheritdoc/>
@@ -30,12 +30,12 @@ namespace Unit05.Game.Scripting
             Actor food = cast.GetFirstActor("food");
             List<Actor> messages = cast.GetActors("messages");
             
-            videoService.ClearBuffer();
-            videoService.DrawActors(segments);
-            videoService.DrawActor(score);
-            videoService.DrawActor(food);
-            videoService.DrawActors(messages);
-            videoService.FlushBuffer();
+            _videoService.ClearBuffer();
+            _videoService.DrawActors(segments);
+            _videoService.DrawActor(score);
+            _videoService.DrawActor(food);
+            _videoService.DrawActors(messages);
+            _videoService.FlushBuffer();
         }
     }
 }

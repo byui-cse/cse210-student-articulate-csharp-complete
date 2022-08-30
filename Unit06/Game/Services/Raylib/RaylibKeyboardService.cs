@@ -6,7 +6,7 @@ namespace Unit06.Game.Services
 {
     public class RaylibKeyboardService : KeyboardService
     {
-        private Dictionary<string, Raylib_cs.KeyboardKey> keys 
+        private Dictionary<string, Raylib_cs.KeyboardKey> _keys 
                 = new Dictionary<string, Raylib_cs.KeyboardKey>() {
             { "a", Raylib_cs.KeyboardKey.KEY_A },
             { "b", Raylib_cs.KeyboardKey.KEY_B },
@@ -59,28 +59,28 @@ namespace Unit06.Game.Services
         /// </inheritdoc>
         public bool IsKeyDown(string key)
         {
-            Raylib_cs.KeyboardKey raylibKey = keys[key.ToLower()];
+            Raylib_cs.KeyboardKey raylibKey = _keys[key.ToLower()];
             return Raylib.IsKeyDown(raylibKey);
         }
 
         /// </inheritdoc>
         public bool IsKeyPressed(string key)
         {
-            Raylib_cs.KeyboardKey raylibKey = keys[key.ToLower()];
+            Raylib_cs.KeyboardKey raylibKey = _keys[key.ToLower()];
             return Raylib.IsKeyPressed(raylibKey);
         }
 
         /// </inheritdoc>
         public bool IsKeyReleased(string key)
         {
-            Raylib_cs.KeyboardKey raylibKey = keys[key.ToLower()];
+            Raylib_cs.KeyboardKey raylibKey = _keys[key.ToLower()];
             return Raylib.IsKeyReleased(raylibKey);
         }
 
         /// </inheritdoc>
         public bool IsKeyUp(string key)
         {
-            Raylib_cs.KeyboardKey raylibKey = keys[key.ToLower()];
+            Raylib_cs.KeyboardKey raylibKey = _keys[key.ToLower()];
             return Raylib.IsKeyUp(raylibKey);
         }
     }

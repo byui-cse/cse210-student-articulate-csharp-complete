@@ -9,18 +9,18 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Ball : Actor
     {
-        private static Random random = new Random();
+        private static Random _random = new Random();
 
-        private Body body;
-        private Image image;
+        private Body _body;
+        private Image _image;
 
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
         public Ball(Body body, Image image, bool debug = false) : base(debug)
         {
-            this.body = body;
-            this.image = image;
+            this._body = body;
+            this._image = image;
         }
 
         /// <summary>
@@ -28,12 +28,12 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void BounceX()
         {
-            Point velocity = body.GetVelocity();
-            double rn = (random.NextDouble() * (1.2 - 0.8) + 0.8);
+            Point velocity = _body.GetVelocity();
+            double rn = (_random.NextDouble() * (1.2 - 0.8) + 0.8);
             double vx = velocity.GetX() * -1;
             double vy = velocity.GetY();
             Point newVelocity = new Point((int)vx, (int)vy);
-            body.SetVelocity(newVelocity);
+            _body.SetVelocity(newVelocity);
         }
 
         /// <summary>
@@ -41,12 +41,12 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void BounceY()
         {
-            Point velocity = body.GetVelocity();
-            double rn = (random.NextDouble() * (1.2 - 0.8) + 0.8);
+            Point velocity = _body.GetVelocity();
+            double rn = (_random.NextDouble() * (1.2 - 0.8) + 0.8);
             double vx = velocity.GetX();
             double vy = velocity.GetY() * -1;
             Point newVelocity = new Point((int)vx, (int)vy);
-            body.SetVelocity(newVelocity);
+            _body.SetVelocity(newVelocity);
         }
         
         /// <summary>
@@ -55,7 +55,7 @@ namespace Unit06.Game.Casting
         /// <returns>The body.</returns>
         public Body GetBody()
         {
-            return body;
+            return _body;
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Unit06.Game.Casting
         /// <returns>The image.</returns>
         public Image GetImage()
         {
-            return image;
+            return _image;
         }
 
         /// <summary>
@@ -72,13 +72,13 @@ namespace Unit06.Game.Casting
         /// </summary>
         public void Release()
         {
-            Point velocity = body.GetVelocity();
+            Point velocity = _body.GetVelocity();
             List<int> velocities = new List<int> {Constants.BALL_VELOCITY, Constants.BALL_VELOCITY};
-            int index = random.Next(velocities.Count);
+            int index = _random.Next(velocities.Count);
             double vx = velocities[index];
             double vy = -Constants.BALL_VELOCITY;
             Point newVelocity = new Point((int)vx, (int)vy);
-            body.SetVelocity(newVelocity);
+            _body.SetVelocity(newVelocity);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Unit04.Game.Casting
     /// </summary>
     public class Artifact : Actor
     {
-        private string message = "";
+        private string _message = "";
 
         /// <summary>
         /// Constructs a new instance of an Artifact.
@@ -23,7 +23,7 @@ namespace Unit04.Game.Casting
         /// <returns>The message.</returns>
         public string GetMessage()
         {
-            return message;
+            return _message;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Unit04.Game.Casting
         /// <param name="message">The given message.</param>
         public void SetMessage(string message)
         {
-            this.message = message;
+            this._message = message;
         }
     }
 }

@@ -5,14 +5,14 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Actor
     {
-        private bool debug;
+        private bool _debug;
         
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
         public Actor(bool debug)
         {
-            this.debug = debug;
+            this._debug = debug;
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace Unit06.Game.Casting
         /// <returns>True if being debugged; false if othewise.</returns>
         public bool IsDebug()
         {
-            return debug;
+            return _debug;
         }
     }
 }

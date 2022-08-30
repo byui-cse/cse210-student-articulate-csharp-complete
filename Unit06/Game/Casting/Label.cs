@@ -5,16 +5,16 @@ namespace Unit06.Game.Casting
     /// </summary>
     public class Label : Actor
     {
-        private Text text;
-        private Point position;
+        private Text _text;
+        private Point _position;
 
         /// <summary>
         /// Constructs a new instance of Label.
         /// </summary>
         public Label(Text text, Point position) : base(false)
         {
-            this.text = text;
-            this.position = position;
+            this._text = text;
+            this._position = position;
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Unit06.Game.Casting
         /// <returns>The text.</returns>
         public Text GetText()
         {
-            return text;
+            return _text;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Unit06.Game.Casting
         /// <returns>The position.</returns>
         public Point GetPosition()
         {
-            return position;
+            return _position;
         }
     }
 }
