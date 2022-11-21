@@ -13,11 +13,14 @@ namespace Unit05.Game.Casting
         private List<Actor> _segments = new List<Actor>();
 
         /// <summary>
-        /// Constructs a new instance of a Snake.
+        /// Non-default constructor creates a new instance of Snake using the 
+        /// given starting position and color.
         /// </summary>
-        public Snake()
+        /// <param name="start">The given start position.</param>
+        /// <param name="color">The given color.</param>
+        public Snake(Point start, Color color)
         {
-            PrepareBody();
+            PrepareBody(start, color);
         }
 
         /// <summary>
@@ -98,23 +101,23 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody()
+        private void PrepareBody(Point start, Color color)
         {
-            int x = Constants.MAX_X / 2;
-            int y = Constants.MAX_Y / 2;
+            int x = start.GetX();
+            int y = start.GetY();
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
                 Point position = new Point(x - i * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "8" : "#";
-                Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
+                Color sColor = i == 0 ? Constants.YELLOW : color;
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText(text);
-                segment.SetColor(color);
+                segment.SetColor(sColor);
                 _segments.Add(segment);
             }
         }

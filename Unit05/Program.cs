@@ -17,10 +17,13 @@ namespace Unit05
         /// <param name="args">The given arguments.</param>
         static void Main(string[] args)
         {
+            Point start = new Point(Constants.MAX_X / 2, Constants.MAX_Y / 2);
+            Color color = Constants.GREEN;
+
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake());
+            cast.AddActor("snake", new Snake(start, color));
             cast.AddActor("score", new Score());
 
             // create the services

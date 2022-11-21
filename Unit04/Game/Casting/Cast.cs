@@ -12,7 +12,8 @@ namespace Unit04.Game.Casting
     /// </summary>
     public class Cast
     {
-        private Dictionary<string, List<Actor>> _actors = new Dictionary<string, List<Actor>>();
+        private Dictionary<string, List<Actor>> _actors 
+                = new Dictionary<string, List<Actor>>();
 
         /// <summary>
         /// Constructs a new instance of Cast.
